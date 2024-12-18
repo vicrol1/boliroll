@@ -1,17 +1,39 @@
 import React from "react";
-import bolis from '../Assets/bolis.jpg'
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
-
+import './principal.css'
+import Catalog from "./Catalog/Catalog";
+import Pedidos from "./Pedidos/Pedidos";
 function Principal (){
-    
-    
+    let [display, setDisplay] = useState(1)
+    let switchDisplay = (currentDisplay) => {
+      currentDisplay === 0?setDisplay(1) : setDisplay(0)
+    }
     return (<>
+      {display}
+
+
+      <div className="tabGroup">
+        <div onClick={() => display !== 1 ?switchDisplay(display): console.log('No es')} className="tab">Catalogo</div>
+        <div onClick={() => display !== 0 ?switchDisplay(display): console.log('No es')} className="tab">Pedidos</div>
+      </div>
+
+      {
+        display === 1 ? (<Catalog></Catalog>) : "Catalogo Inactivo" 
+      }
+      {
+        display === 0 ? (<Pedidos></Pedidos>) : "Pedidos Inactivo" 
+      }
 
 
 
 
-      <img src={bolis} className={'bolisimg'}></img>
+
+
+
+
+
+
     <div className='Empresa'>
       <h2 className='quienes somo'>¿Quienes somos?</h2>
       <h2 className='proposito'>¿Cual es nuestro proposito?</h2>

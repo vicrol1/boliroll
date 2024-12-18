@@ -1,0 +1,13 @@
+.tabGroup{
+    display: flex;
+    
+    /* justify-content: space-around; */
+}
+.tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: black solid 3px;
+    cursor: pointer;
+}

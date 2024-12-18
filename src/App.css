@@ -75,12 +75,7 @@
   animation-fill-mode: backwards;
 }
 .App {
-  display: flex;
-  z-index: -1;
-  /* text-align: center; */
-  align-items: center;
-  flex-direction: column;
-  background-color: #83e4ff;
+
 }
 
 .App-logo {
